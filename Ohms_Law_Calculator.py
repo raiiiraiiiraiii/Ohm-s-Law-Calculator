@@ -8,52 +8,62 @@
 print("Welcome to Ohm's Law Calculator!\n")
 
 # Ask the user what they want to calculate: Voltage, Current, or Resistance.
-try:
-    calculate = int(input("\nWhat would you like to calculate?\n"
-                          "1. Voltage\n"
-                          "2. Current\n"
-                          "3. Resistance\n"
-                          "Enter here: "))
-except ValueError:
-        print("Invalid input. Enter a number.")
+calculate = None
+while calculate is None:
+    try:
+        calculate = int(input("What would you like to calculate?\n"
+                              "1. Voltage\n"
+                              "2. Current\n"
+                              "3. Resistance\n"
+                              "Enter here: "))
+        if calculate not in [1, 2, 3]:
+            print("Invalid input. Please enter numbers 1-3 only.\n")
+            calculate = None
+    except ValueError:
+        print("Invalid input. Enter a number.\n")
 
 # Prompt the user to input values
 if calculate == 1:
     # Voltage
-    try:
-        print('\nEnter Values for:')
-        current = float(input("Current: "))
-        resistance = float(input("Resistance: "))
-        voltage = (current * resistance)
-        print(f"Voltage = {voltage:.2f}")
-    except ValueError:
-          print("Invalid input. Enter number.")
+    while True:
+        try:
+            print('\nEnter Values for:')
+            current = float(input("Current: "))
+            resistance = float(input("Resistance: "))
+            voltage = (current * resistance)
+            print(f"Voltage = {voltage:.2f}")
+        except ValueError:
+              print("Invalid input. Enter number.")
 
 elif calculate == 2:
       # Current
-    try:
-        print('\nEnter Values for:')
-        voltage = float(input("Voltage: "))
-        resistance = float(input("Resistance: "))
-        current = (voltage / resistance)
-        print(f"Current = {current:.2f}")
-    except ZeroDivisionError:
-         print("ERROR: Cannot divide by zero.")
-    except ValueError:
-         print("Invalid input. Enter number.")
+    while True:
+        try:
+            print('\nEnter Values for:')
+            voltage = float(input("Voltage: "))
+            resistance = float(input("Resistance: "))
+            current = (voltage / resistance)
+            print(f"Current = {current:.2f}")
+            break
+        except ZeroDivisionError:
+             print("ERROR: Cannot divide by zero.")
+        except ValueError:
+             print("Invalid input. Enter number.")
 
 elif calculate == 3:
     # Resistance
-    try:
-        print('\nEnter Values for:')
-        voltage = float(input("Voltage: "))
-        current = float(input("Current: "))
-        resistance = (voltage / current)
-        print(f"Resistance = {resistance:.2f}")
-    except ZeroDivisionError:
-         print("ERROR: Cannot divide by zero.")
-    except ValueError:
-         print("Invalid input. Enter number.")
+    while True:
+        try:
+            print('\nEnter Values for:')
+            voltage = float(input("Voltage: "))
+            current = float(input("Current: "))
+            resistance = (voltage / current)
+            print(f"Resistance = {resistance:.2f}")
+            break
+        except ZeroDivisionError:
+             print("ERROR: Cannot divide by zero.")
+        except ValueError:
+             print("Invalid input. Enter number.")
 
 else:
      print("Invalid input. Enter a valid option.")
