@@ -38,4 +38,14 @@ if calculate == 2:
     except ValueError:
          print("Invalid input. Enter number.")
 
+if calculate == 3:
+    # Resistance
+    try:
+        print('Enter Values for: \n')
+        voltage = float(input("Voltage: "))
+        current = float(input("Current: "))
+    except ZeroDivisionError:
+         print("ERROR: Cannot divide by zero.")
+    except ValueError:
+         print("Invalid input. Enter number.")
 # Calculate
