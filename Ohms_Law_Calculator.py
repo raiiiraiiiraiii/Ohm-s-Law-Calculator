@@ -8,14 +8,16 @@
 print("Welcome to Ohm's Law Calculator!\n")
 
 # Ask the user what they want to calculate: Voltage, Current, or Resistance.
-try:
-    calculate = int(input("\nWhat would you like to calculate?\n"
-                            "1. Voltage\n"
-                            "2. Current\n"
-                            "3. Resistance\n"
-                            "Enter here: "))
-except ValueError:
-    print("Invalid input. Enter a number.")
+while True:
+
+    try:
+        calculate = int(input("\nWhat would you like to calculate?\n"
+                                "1. Voltage\n"
+                                "2. Current\n"
+                                "3. Resistance\n"
+                                "Enter here: "))
+    except ValueError:
+        print("Invalid input. Enter a number.")
 
 # Prompt the user to input values
 if calculate == 1:
