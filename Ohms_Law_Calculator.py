@@ -24,6 +24,8 @@ if calculate == 1:
         print('Enter Values for: \n')
         current = float(input("Current: "))
         resistance = float(input("Resistance: "))
+        voltage = (current * resistance)
+        print(f"Voltage = {voltage:.2f}")
     except ValueError:
           print("Invalid input. Enter number.")
 
