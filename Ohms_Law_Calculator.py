@@ -21,7 +21,7 @@ except ValueError:
 if calculate == 1:
     # Voltage
     try:
-        print('Enter Values for: \n')
+        print('\nEnter Values for:')
         current = float(input("Current: "))
         resistance = float(input("Resistance: "))
         voltage = (current * resistance)
@@ -29,10 +29,10 @@ if calculate == 1:
     except ValueError:
           print("Invalid input. Enter number.")
 
-if calculate == 2:
+elif calculate == 2:
       # Current
     try:
-        print('Enter Values for: \n')
+        print('\nEnter Values for:')
         voltage = float(input("Voltage: "))
         resistance = float(input("Resistance: "))
         current = (voltage / resistance)
@@ -42,10 +42,10 @@ if calculate == 2:
     except ValueError:
          print("Invalid input. Enter number.")
 
-if calculate == 3:
+elif calculate == 3:
     # Resistance
     try:
-        print('Enter Values for: \n')
+        print('\nEnter Values for:')
         voltage = float(input("Voltage: "))
         current = float(input("Current: "))
         resistance = (voltage / current)
@@ -54,4 +54,6 @@ if calculate == 3:
          print("ERROR: Cannot divide by zero.")
     except ValueError:
          print("Invalid input. Enter number.")
-# Calculate
+
+else:
+     print("Invalid input. Enter a valid option.")
