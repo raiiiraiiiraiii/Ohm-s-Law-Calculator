@@ -37,6 +37,8 @@ if calculate == 2:
         print('Enter Values for: \n')
         voltage = float(input("Voltage: "))
         resistance = float(input("Resistance: "))
+        current = (voltage / resistance)
+        print(f"Current = {current:.2f}")
     except ZeroDivisionError:
          print("ERROR: Cannot divide by zero.")
     except ValueError:
